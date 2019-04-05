@@ -3,18 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Wufeihuang&#39;s Blog</title>
+  <title>使用d3.js实现一个杭州地图（一） | Wufeihuang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wufeihuang的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wufeihuang&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="使用d3.js实现一个杭州地图，暂时只包含地图轮廓，后续会逐渐丰富功能。 地理数据来源从阿里DataV的地图选择器可以获得GeoJSON格式的地理数据。 不过要注意的是这个数据并不是特别精确，这是从部分地图的轮廓实线和虚线不能重叠做出的推断。不过用于个人学习尝试是很方便的，只是商用地图则需要更谨慎。 d3js版本选择没什么好犹豫的，用最新的版本，目前是v5.9.2。 直接使用 https://d3">
+<meta name="keywords" content="d3js,map">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用d3.js实现一个杭州地图（一）">
+<meta property="og:url" content="http://yoursite.com/2019/04/06/building-a-map-of-hangzhou-with-d3js/index.html">
 <meta property="og:site_name" content="Wufeihuang&#39;s Blog">
-<meta property="og:description" content="wufeihuang的个人博客">
+<meta property="og:description" content="使用d3.js实现一个杭州地图，暂时只包含地图轮廓，后续会逐渐丰富功能。 地理数据来源从阿里DataV的地图选择器可以获得GeoJSON格式的地理数据。 不过要注意的是这个数据并不是特别精确，这是从部分地图的轮廓实线和虚线不能重叠做出的推断。不过用于个人学习尝试是很方便的，只是商用地图则需要更谨慎。 d3js版本选择没什么好犹豫的，用最新的版本，目前是v5.9.2。 直接使用 https://d3">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-05T21:28:28.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wufeihuang&#39;s Blog">
-<meta name="twitter:description" content="wufeihuang的个人博客">
+<meta name="twitter:title" content="使用d3.js实现一个杭州地图（一）">
+<meta name="twitter:description" content="使用d3.js实现一个杭州地图，暂时只包含地图轮廓，后续会逐渐丰富功能。 地理数据来源从阿里DataV的地图选择器可以获得GeoJSON格式的地理数据。 不过要注意的是这个数据并不是特别精确，这是从部分地图的轮廓实线和虚线不能重叠做出的推断。不过用于个人学习尝试是很方便的，只是商用地图则需要更谨慎。 d3js版本选择没什么好犹豫的，用最新的版本，目前是v5.9.2。 直接使用 https://d3">
   
   
     <link rel="icon" href="/favicon.png">
@@ -59,9 +61,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-building-a-map-of-hangzhou-with-d3js" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-building-a-map-of-hangzhou-with-d3js" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/06/building-a-map-of-hangzhou-with-d3js/" class="article-date">
   <time datetime="2019-04-05T19:51:49.000Z" itemprop="datePublished">2019-04-06</time>
@@ -78,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/building-a-map-of-hangzhou-with-d3js/">使用d3.js实现一个杭州地图（一）</a>
+    <h1 class="article-title" itemprop="name">
+      使用d3.js实现一个杭州地图（一）
     </h1>
   
 
@@ -118,50 +118,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-the-beginning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/04/the-beginning/" class="article-date">
-  <time datetime="2019-04-04T12:25:42.759Z" itemprop="datePublished">2019-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/04/the-beginning/">一个起点</a>
-    </h1>
+    <a href="/2019/04/04/the-beginning/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">一个起点</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。</p>
-<p>长风破浪会有时，直挂云帆济沧海！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/04/the-beginning/" data-id="cju4l1su30000ncuqv14js083" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学与思/">学与思</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
