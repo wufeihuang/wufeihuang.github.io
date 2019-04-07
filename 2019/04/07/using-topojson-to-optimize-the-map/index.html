@@ -3,18 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Wufeihuang&#39;s Blog</title>
+  <title>使用d3.js实现地图（二） - 基于TopoJSON优化 | Wufeihuang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="吴飞黄的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wufeihuang&#39;s Blog">
-<meta property="og:url" content="https://wufeihuang.github.io/index.html">
+  <meta name="description" content="上一篇 提到了用GeoJSON格式数据绘制地图有缺点，这一篇就探讨如何基于TopoJSON来优化。 TopoJSON介绍TopoJSON是使用拓扑结构编码来实现的一个GeoJSON的扩展。官方原文是这样的：”TopoJSON is an extension of GeoJSON that encodes topology.”具体的介绍可以看官方文档。 总之TopoJSON相对于GeoJSON有很大">
+<meta name="keywords" content="d3js,map">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用d3.js实现地图（二） - 基于TopoJSON优化">
+<meta property="og:url" content="https://wufeihuang.github.io/2019/04/07/using-topojson-to-optimize-the-map/index.html">
 <meta property="og:site_name" content="Wufeihuang&#39;s Blog">
-<meta property="og:description" content="吴飞黄的个人博客">
+<meta property="og:description" content="上一篇 提到了用GeoJSON格式数据绘制地图有缺点，这一篇就探讨如何基于TopoJSON来优化。 TopoJSON介绍TopoJSON是使用拓扑结构编码来实现的一个GeoJSON的扩展。官方原文是这样的：”TopoJSON is an extension of GeoJSON that encodes topology.”具体的介绍可以看官方文档。 总之TopoJSON相对于GeoJSON有很大">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-07T17:48:44.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wufeihuang&#39;s Blog">
-<meta name="twitter:description" content="吴飞黄的个人博客">
+<meta name="twitter:title" content="使用d3.js实现地图（二） - 基于TopoJSON优化">
+<meta name="twitter:description" content="上一篇 提到了用GeoJSON格式数据绘制地图有缺点，这一篇就探讨如何基于TopoJSON来优化。 TopoJSON介绍TopoJSON是使用拓扑结构编码来实现的一个GeoJSON的扩展。官方原文是这样的：”TopoJSON is an extension of GeoJSON that encodes topology.”具体的介绍可以看官方文档。 总之TopoJSON相对于GeoJSON有很大">
   
   
     <link rel="icon" href="/favicon.png">
@@ -65,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-using-topojson-to-optimize-the-map" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-using-topojson-to-optimize-the-map" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/07/using-topojson-to-optimize-the-map/" class="article-date">
   <time datetime="2019-04-07T15:21:52.000Z" itemprop="datePublished">2019-04-07</time>
@@ -84,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/using-topojson-to-optimize-the-map/">使用d3.js实现地图（二） - 基于TopoJSON优化</a>
+    <h1 class="article-title" itemprop="name">
+      使用d3.js实现地图（二） - 基于TopoJSON优化
     </h1>
   
 
@@ -144,113 +144,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-building-a-map-of-hangzhou-with-d3js" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/06/building-a-map-of-hangzhou-with-d3js/" class="article-date">
-  <time datetime="2019-04-05T19:51:49.000Z" itemprop="datePublished">2019-04-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/d3js/">d3js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/building-a-map-of-hangzhou-with-d3js/">使用d3.js实现地图（一）</a>
-    </h1>
+    <a href="/2019/04/06/building-a-map-of-hangzhou-with-d3js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用d3.js实现地图（一）</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用d3.js实现一个杭州地图，暂时只包含地图轮廓，后续会逐渐丰富功能。</p>
-<h2 id="地理数据来源"><a href="#地理数据来源" class="headerlink" title="地理数据来源"></a>地理数据来源</h2><p>从<a href="https://datav.aliyun.com/tools/atlas/#&amp;lat=33.521903996156105&amp;lng=104.29849999999999&amp;zoom=4" target="_blank" rel="noopener">阿里DataV的地图选择器</a>可以获得GeoJSON格式的地理数据。</p>
-<p>不过要注意的是这个数据并不是特别精确，这是从部分地图的轮廓实线和虚线不能重叠做出的推断。不过用于个人学习尝试是很方便的，只是商用地图则需要更谨慎。</p>
-<h2 id="d3js版本选择"><a href="#d3js版本选择" class="headerlink" title="d3js版本选择"></a>d3js版本选择</h2><p>没什么好犹豫的，用最新的版本，目前是<code>v5.9.2</code>。</p>
-<p>直接使用 <a href="https://d3js.org/d3.v5.min.js" target="_blank" rel="noopener">https://d3js.org/d3.v5.min.js</a> 就能引用到最新的版本，这是会随发布版本一起更新的。</p>
-<h2 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 省略前置部分 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将函数声明为 async，内部会用到 await</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/*******      1、获得数据          *******/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取杭州的 GeoJSON 数据，并进行错误捕获</span></span><br><span class="line">  <span class="keyword">let</span> geo_data </span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    geo_data = <span class="keyword">await</span> d3.json(geo_hangzhou_url)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.error(e)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*******      2、创建和配置路径生成器函数       *******/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用墨卡托投影 projection，并初始化相关参数</span></span><br><span class="line">  <span class="keyword">const</span> projection = d3.geoMercator()</span><br><span class="line">    .scale(<span class="number">1</span>)</span><br><span class="line">    .translate([<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">    .precision(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 地理路径生成器</span></span><br><span class="line">  <span class="keyword">const</span> path = d3.geoPath()</span><br><span class="line">    .projection(projection)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取当前 GeoJSON 的边界</span></span><br><span class="line">  <span class="keyword">const</span> bounds = path.bounds(geo_data)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 计算将地图绘制到宽高为 [width, height] 的矩形中要缩放的比例</span></span><br><span class="line">  <span class="keyword">const</span> scale = <span class="number">0.95</span> / <span class="built_in">Math</span>.max(</span><br><span class="line">    (bounds[<span class="number">1</span>][<span class="number">0</span>] - bounds[<span class="number">0</span>][<span class="number">0</span>]) / width,</span><br><span class="line">    (bounds[<span class="number">1</span>][<span class="number">1</span>] - bounds[<span class="number">0</span>][<span class="number">1</span>]) / height</span><br><span class="line">  )</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 为了使地图在矩形中居中，缩放后需要进行平移</span></span><br><span class="line">  <span class="comment">// (bounds[1][0] + bounds[0][0]) 中之所以使用+号，是因为当前投影下会是一正一负，下行同理</span></span><br><span class="line">  <span class="keyword">const</span> translate = [</span><br><span class="line">    (width - scale * (bounds[<span class="number">1</span>][<span class="number">0</span>] + bounds[<span class="number">0</span>][<span class="number">0</span>])) / <span class="number">2</span>,</span><br><span class="line">    (height - scale * (bounds[<span class="number">1</span>][<span class="number">1</span>] + bounds[<span class="number">0</span>][<span class="number">1</span>])) / <span class="number">2</span></span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 根据计算后的 scale 和 translate 值，调整 projection 参数</span></span><br><span class="line">  projection</span><br><span class="line">    .scale(scale)</span><br><span class="line">    .translate(translate)</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 路径生成器的投影方法响应的要重置</span></span><br><span class="line">  path.projection(projection)</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*******      3、结合前二者绘制图形        *******/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 开始绘制</span></span><br><span class="line">  g.selectAll(<span class="string">'path'</span>)</span><br><span class="line">    .data(geo_data.features) <span class="comment">// 这是由GeoJSON的格式决定的，geo_data.features 实际对应整个地图内的各个分区</span></span><br><span class="line">    .enter()</span><br><span class="line">    .append(<span class="string">'path'</span>)</span><br><span class="line">    .attr(<span class="string">'d'</span>, path)</span><br><span class="line">    .attr(<span class="string">'fill'</span>, <span class="string">'none'</span>)</span><br><span class="line">    .attr(<span class="string">'stroke'</span>, <span class="string">'#000'</span>)</span><br><span class="line">    .attr(<span class="string">'stroke-dasharray'</span>, <span class="string">'2 3'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p>其实整个绘制只包含三个步骤，已经在代码中通过注释分隔表示了。</p>
-<h3 id="第一步：获得GeoJSON数据"><a href="#第一步：获得GeoJSON数据" class="headerlink" title="第一步：获得GeoJSON数据"></a>第一步：获得GeoJSON数据</h3><p>这里使用了 <code>d3.json(json_url)</code> 来请求外部的杭州地理json文件。<code>d3.json</code>其实可以使用<code>回调</code>或者链式调用一个<code>then</code>函数来进行后续操作，但这里我使用了<code>async/await</code>，使得代码更简洁。<a href="https://github.com/d3/d3-fetch/blob/master/README.md#dsv" target="_blank" rel="noopener">#d3-fetch</a></p>
-<h3 id="第二步：创建并配置地理路径生成器"><a href="#第二步：创建并配置地理路径生成器" class="headerlink" title="第二步：创建并配置地理路径生成器"></a>第二步：创建并配置地理路径生成器</h3><p>D3提供了<code>d3.geoPath()</code>方法来创建地理路径生成器函数，并可通过<code>geo_path.projection(projection)</code>来设置生成路径时使用何种投影（projection）方式。</p>
-<p>此外，D3还提供了很多内置的投影方法，其中墨卡托投影<code>d3.geoMercator()</code>是一种很常用的投影方式。</p>
-<p>第二部分的大部分代码其实是在计算，以配置合适的投影参数，使得路径生成器产生的路径是适配提供的矩形容器的。这里要注意的是初始化<code>projection</code>时设置<code>scale</code>、<code>translate</code>的初始值是必要的，这些并不是默认值，只有这么配置之后的计算才是正确的。（<code>precision</code>在眼下这个项目中没什么影响，它的具体作用我没弄明白）。<a href="https://github.com/d3/d3-geo/blob/master/README.md#projection_scale" target="_blank" rel="noopener">#d3-geo</a></p>
-<p>除了这种手动计算，D3提供了内置的简便方法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> projection = d3.geoMercator()</span><br><span class="line">  .fitSize([width, height], geo_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = d3.geoPath()</span><br><span class="line">  .projection(projection)</span><br></pre></td></tr></table></figure></p>
-<p>这种写法简单了不知多少，不过上面的复杂写法更利于理解其原理。</p>
-<h3 id="第三步：具体绘制"><a href="#第三步：具体绘制" class="headerlink" title="第三步：具体绘制"></a>第三步：具体绘制</h3><p>这里要注意的就是使用<code>selection.data()</code>进行数据绑定前，需要对<code>GeoJSON</code>的格式有所了解。</p>
-<p>如果仅仅只绘制轮廓，其实还有一种绘制实现方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">g.append(<span class="string">'path'</span>)</span><br><span class="line">  .datum(geo_data)</span><br><span class="line">  .attr(<span class="string">'d'</span>, path)</span><br><span class="line">  .attr(<span class="string">'fill'</span>, <span class="string">'none'</span>)</span><br><span class="line">  .attr(<span class="string">'stroke'</span>, <span class="string">'#000'</span>)</span><br><span class="line">  .attr(<span class="string">'stroke-dasharray'</span>, <span class="string">'2 3'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>也就是基于整个 GeoJSON 数据，可以直接绘制一个单路径的地图轮廓，但这样就无法单独操作内部的区域了。</p>
-<h2 id="GeoJSON的不足"><a href="#GeoJSON的不足" class="headerlink" title="GeoJSON的不足"></a>GeoJSON的不足</h2><p>绘制完成后，可以明显地发现地区重叠边界颜色更深，而且如果想单纯只绘制整个杭州市的最外层轮廓也是做不到的，这都是使用 GeoJSON 时的缺点——因为一个 GeoJSON 实际上是由众多独立的几何图形组成的，它自身不能识别边界重叠，也就无法实现边界去重或者仅获取不重叠的边界。</p>
-<p>这个时候就需要用到 <a href="https://github.com/topojson/topojson" target="_blank" rel="noopener">TopoJSON</a>了，它是<a href="https://github.com/mbostock" target="_blank" rel="noopener">Mike Bostock</a>为了解决GeoJSON的不足而设计的。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>具体效果：<a href="https://wufeihuang.github.io/Map-of-Hangzhou/map_01/index.html">https://wufeihuang.github.io/Map-of-Hangzhou/map_01/index.html</a></p>
-<p>完整代码：<a href="https://github.com/wufeihuang/Map-of-Hangzhou/blob/master/map_01/index.html" target="_blank" rel="noopener">https://github.com/wufeihuang/Map-of-Hangzhou/blob/master/map_01/index.html</a></p>
-<p>下一篇：<a href="https://wufeihuang.github.io/2019/04/07/using-topojson-to-optimize-the-map/">使用d3.js实现地图（二） - 基于TopoJSON优化</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wufeihuang.github.io/2019/04/06/building-a-map-of-hangzhou-with-d3js/" data-id="cju72szm50002c8uqkd2hghjo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/d3js/">d3js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map/">map</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-the-beginning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/04/the-beginning/" class="article-date">
-  <time datetime="2019-04-04T12:25:42.759Z" itemprop="datePublished">2019-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/04/the-beginning/">一个起点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。</p>
-<p>长风破浪会有时，直挂云帆济沧海！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wufeihuang.github.io/2019/04/04/the-beginning/" data-id="cju72szm20001c8uq026ogsa4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学与思/">学与思</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
