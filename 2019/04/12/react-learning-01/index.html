@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="上一篇 用TopoJSON优化了地图的实现，这一篇给每个地区标注上地区中心点和地区名称。 数据说明在地图上添加标注，实际还是基于地理经纬度坐标映射到地图上对应的点坐标，所以我们需要有要标注点的经纬度坐标数据。在这个项目中，所使用的杭州地图GeoJSON文件中已经包含了各个地区的相关信息，所以这里我们不需要额外的数据。 具体来说，这个GeoJSON文件内的数据对象中有一个features数组，这对应">
-<meta name="keywords" content="d3js,map">
+  <meta name="description" content="前言杭州这边前端招聘大多是要求React栈，所以学习下React，对比学习应该也能更有助于理解三大框架的原理和意义。 暂时先根据FreeCodeCamp的React教程学习。之前刷过一些基础内容，这个网站用于入门还是很不错的。 这一篇的内容主要就从这个课程的内容摘选并翻译过来。 React介绍React 是由 Facebook 推广开来的，一个用于创建用户界面的开源JavaScript库。它用于创">
+<meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用d3.js实现地图（三） - 添加坐标点和文字标记">
-<meta property="og:url" content="https://wufeihuang.github.io/2019/04/10/add-mark-to-map/index.html">
+<meta property="og:title" content="React学习（1）—— JSX">
+<meta property="og:url" content="https://wufeihuang.github.io/2019/04/12/react-learning-01/index.html">
 <meta property="og:site_name" content="Wufeihuang&#39;s Blog">
-<meta property="og:description" content="上一篇 用TopoJSON优化了地图的实现，这一篇给每个地区标注上地区中心点和地区名称。 数据说明在地图上添加标注，实际还是基于地理经纬度坐标映射到地图上对应的点坐标，所以我们需要有要标注点的经纬度坐标数据。在这个项目中，所使用的杭州地图GeoJSON文件中已经包含了各个地区的相关信息，所以这里我们不需要额外的数据。 具体来说，这个GeoJSON文件内的数据对象中有一个features数组，这对应">
+<meta property="og:description" content="前言杭州这边前端招聘大多是要求React栈，所以学习下React，对比学习应该也能更有助于理解三大框架的原理和意义。 暂时先根据FreeCodeCamp的React教程学习。之前刷过一些基础内容，这个网站用于入门还是很不错的。 这一篇的内容主要就从这个课程的内容摘选并翻译过来。 React介绍React 是由 Facebook 推广开来的，一个用于创建用户界面的开源JavaScript库。它用于创">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-09T18:33:21.910Z">
+<meta property="og:updated_time" content="2019-04-11T20:04:05.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用d3.js实现地图（三） - 添加坐标点和文字标记">
-<meta name="twitter:description" content="上一篇 用TopoJSON优化了地图的实现，这一篇给每个地区标注上地区中心点和地区名称。 数据说明在地图上添加标注，实际还是基于地理经纬度坐标映射到地图上对应的点坐标，所以我们需要有要标注点的经纬度坐标数据。在这个项目中，所使用的杭州地图GeoJSON文件中已经包含了各个地区的相关信息，所以这里我们不需要额外的数据。 具体来说，这个GeoJSON文件内的数据对象中有一个features数组，这对应">
+<meta name="twitter:title" content="React学习（1）—— JSX">
+<meta name="twitter:description" content="前言杭州这边前端招聘大多是要求React栈，所以学习下React，对比学习应该也能更有助于理解三大框架的原理和意义。 暂时先根据FreeCodeCamp的React教程学习。之前刷过一些基础内容，这个网站用于入门还是很不错的。 这一篇的内容主要就从这个课程的内容摘选并翻译过来。 React介绍React 是由 Facebook 推广开来的，一个用于创建用户界面的开源JavaScript库。它用于创">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://wufeihuang.github.io/2019/04/10/add-mark-to-map/">
+  <link rel="canonical" href="https://wufeihuang.github.io/2019/04/12/react-learning-01/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>使用d3.js实现地图（三） - 添加坐标点和文字标记 | Wufeihuang's Blog</title>
+  <title>React学习（1）—— JSX | Wufeihuang's Blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wufeihuang.github.io/2019/04/10/add-mark-to-map/">
+    <link itemprop="mainEntityOfPage" href="https://wufeihuang.github.io/2019/04/12/react-learning-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wufeihuang">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">使用d3.js实现地图（三） - 添加坐标点和文字标记
+          <h2 class="post-title" itemprop="name headline">React学习（1）—— JSX
 
               
             
@@ -361,7 +361,7 @@
                 
               
 
-              <time title="创建时间：2019-04-10 00:33:00 / 修改时间：02:33:21" itemprop="dateCreated datePublished" datetime="2019-04-10T00:33:00+08:00">2019-04-10</time>
+              <time title="创建时间：2019-04-12 03:20:45 / 修改时间：04:04:05" itemprop="dateCreated datePublished" datetime="2019-04-12T03:20:45+08:00">2019-04-12</time>
             
 
             
@@ -383,7 +383,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/d3js/" itemprop="url" rel="index"><span itemprop="name">d3js</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a></span>
 
                 
                 
@@ -418,26 +418,24 @@
       
 
       
-        <p><a href="https://wufeihuang.github.io/2019/04/07/using-topojson-to-optimize-the-map/">上一篇</a> 用TopoJSON优化了地图的实现，这一篇给每个地区标注上地区中心点和地区名称。</p>
-<h2 id="数据说明"><a href="#数据说明" class="headerlink" title="数据说明"></a>数据说明</h2><p>在地图上添加标注，实际还是基于地理经纬度坐标映射到地图上对应的点坐标，所以我们需要有要标注点的经纬度坐标数据。在这个项目中，所使用的杭州地图GeoJSON文件中已经包含了各个地区的相关信息，所以这里我们不需要额外的数据。</p>
-<p>具体来说，这个GeoJSON文件内的数据对象中有一个<code>features</code>数组，这对应着杭州市的各个区域；而每个其中每个区域<code>feature</code>中都包含一个<code>properties</code>属性，它包含了该区域的中心点经纬度<code>center</code>以及名称<code>name</code>等信息。</p>
-<h2 id="坐标转换的实现"><a href="#坐标转换的实现" class="headerlink" title="坐标转换的实现"></a>坐标转换的实现</h2><p>我们首先需要将地理经纬度坐标映射到地图上的点坐标。这就需要利用到绘制地图时定义的投影<code>projection</code>方法：</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>杭州这边前端招聘大多是要求React栈，所以学习下React，对比学习应该也能更有助于理解三大框架的原理和意义。</p>
+<p>暂时先根据<a href="https://learn.freecodecamp.org/front-end-libraries/react" target="_blank" rel="noopener">FreeCodeCamp的React教程</a>学习。之前刷过一些基础内容，这个网站用于入门还是很不错的。</p>
+<p>这一篇的内容主要就从这个课程的内容摘选并翻译过来。</p>
+<h2 id="React介绍"><a href="#React介绍" class="headerlink" title="React介绍"></a>React介绍</h2><p>React 是由 Facebook 推广开来的，一个用于创建用户界面的开源JavaScript库。它用于创建组件、处理状态和属性，利用事件监听器和某些声明周期方法来更新数据。</p>
+<blockquote>
+<p>It is used to create components, handle state and props, utilize event listeners and certain life cycle methods to update data as it changes.</p>
+</blockquote>
+<p>React结合HTML和Javascript的能力创建了他自己的标记语言——JSX。</p>
 <a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 已经准备好的投影方法</span></span><br><span class="line"><span class="keyword">const</span> projection = d3.geoMercator()</span><br><span class="line">  .fitSize([width, height], geo_data)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过projection将地理坐标转换成绘图的平面坐标</span></span><br><span class="line"><span class="comment">// 这里使用数组的解构赋值</span></span><br><span class="line"><span class="keyword">const</span> [x, y] = projection(feature.properties.center)</span><br></pre></td></tr></table></figure>
-<p>经过投影方法转换后得到的<code>x</code>和<code>y</code>就是绘图时可以直接使用的坐标了。</p>
-<h2 id="标注绘制"><a href="#标注绘制" class="headerlink" title="标注绘制"></a>标注绘制</h2><p>先上代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第五层，各区域中心点标注</span></span><br><span class="line"><span class="keyword">const</span> marks_layer = g.append(<span class="string">'g'</span>).attr(<span class="string">'class'</span>, <span class="string">'layer--marks'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制第五层的各区域中心点以及标注名字</span></span><br><span class="line">marks_layer</span><br><span class="line">  .style(<span class="string">'pointer-events'</span>, <span class="string">'none'</span>) <span class="comment">// 这一层避免事件监听，免得影响交互层的交互</span></span><br><span class="line">  .selectAll(<span class="string">'.mark_group'</span>)</span><br><span class="line">  .data(geo_data.features)</span><br><span class="line">  .enter()</span><br><span class="line">  .append(<span class="string">'g'</span>)</span><br><span class="line">  .attr(<span class="string">'class'</span>, <span class="string">'mark_group'</span>)</span><br><span class="line">  .each(<span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="comment">// 内部有this引用，不能用箭头函数</span></span><br><span class="line">    <span class="keyword">const</span> el = d3.select(<span class="keyword">this</span>)</span><br><span class="line">    <span class="comment">// d.properties中包含该区域的中心点和名字</span></span><br><span class="line">    <span class="comment">// 通过projection将地理坐标转换成绘图的平面坐标</span></span><br><span class="line">    <span class="keyword">const</span> [x, y] = projection(d.properties.center)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 绘制圆点</span></span><br><span class="line">    el</span><br><span class="line">      .append(<span class="string">'circle'</span>)</span><br><span class="line">      .attr(<span class="string">'cx'</span>, x)</span><br><span class="line">      .attr(<span class="string">'cy'</span>, y)</span><br><span class="line">      .attr(<span class="string">'r'</span>, <span class="number">2</span>)</span><br><span class="line">      .attr(<span class="string">'stroke'</span>, <span class="string">'none'</span>)</span><br><span class="line">      .attr(<span class="string">'fill'</span>, <span class="string">'#000'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加地名文字</span></span><br><span class="line">    el</span><br><span class="line">      .append(<span class="string">'text'</span>)</span><br><span class="line">      .attr(<span class="string">'x'</span>, x + <span class="number">5</span>)</span><br><span class="line">      .attr(<span class="string">'y'</span>, y)</span><br><span class="line">      .attr(<span class="string">'dy'</span>, <span class="string">'0.35em'</span>)</span><br><span class="line">      .text(d.properties.name)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>为了方便统一处理，我们创建了一个新的分组，暂且叫<code>marks_layer</code>，标注信息不能被遮挡，所以这一层放在最上层，也就是最后创建。</p>
-<p>为了不让这一层影响到交互层的交互，所以将它的样式<code>pointer-events</code>设为<code>none</code>。</p>
-<p>然后就是通用的<code>data(data).enter().append(&#39;tag&#39;)</code>新增元素的模式了。因为每个mark包含一个表示位置的圆点和地区名称，所以我们又用了<code>g</code>进行分组。</p>
-<p>为了避免重复计算，使用了在<code>each()</code>函数中添加子元素的方法，这样使得每个mark分组的添加只需要调用一次<code>projection</code>方法，也就是只进行一次坐标转换计算。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这一部分的实现很简单，关键就在于要将地理经纬度坐标通过投影方法转换成绘图坐标的思路。</p>
-<p>这里有个问题就是部分较近的文本会重叠，这个有几种处理思路：首先是调整文本字体大小或者使用缩写表示之类的方法，但还是可能重叠；其次是对重叠的文本做单独的位置调整，但这需要手动处理，比较麻烦且难以维护；最好的是实现一个文本重叠判断和处理的工具函数，实现自动调整文本样式和位置的能力，不过这有点难度。Last but not least，还可以选择性地隐藏部分文本乃至所有文本，有时候这未必不是一种合适的解决方案。</p>
-<p>下一篇来实现地图的缩放和拖拽平移的交互功能。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>具体效果：<a href="https://wufeihuang.github.io/Map-of-Hangzhou/map_03/index.html">https://wufeihuang.github.io/Map-of-Hangzhou/map_03/index.html</a></p>
-<p>完整代码：<a href="https://github.com/wufeihuang/Map-of-Hangzhou/blob/master/map_03/index.html" target="_blank" rel="noopener">https://github.com/wufeihuang/Map-of-Hangzhou/blob/master/map_03/index.html</a></p>
-<p>上一篇：<a href="https://wufeihuang.github.io/2019/04/07/using-topojson-to-optimize-the-map/">使用d3.js实现地图（二） - 基于TopoJSON优化</a></p>
-<p>下一篇：待更新</p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>JSX是JavaScript的一种语法扩展，它允许你直接在JavaScript中写HTML。</p>
+<p>这有几点优势：它使得你可以在HTML中充分利用JavaScript的编程能力，并保持你的代码可读性。</p>
+<p>JSX大部分情况和HTML一样，但也有一些不同：比如可以直接在JSX中写JavaScript代码，具体的用法是使用大括号将JavaScript代码括起来。</p>
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>由于JSX并不是合法的JavaScript，所以JSX代码必须被编译成JavaScript，其中常用的编译工具便是Babel。</p>
+<h3 id="单个根元素"><a href="#单个根元素" class="headerlink" title="单个根元素"></a>单个根元素</h3><p>关于JSX很重要的一点是JSX可以像HTML一样嵌套，但必须返回单个元素，即用一个根元素包裹住所有其他元素；否则会无法编译。</p>
+<p><strong>Valid JSX:</strong>:<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;Paragraph One&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt;Paragraph Two&lt;/</span>p&gt;</span><br><span class="line">  &lt;p&gt;Paragraph Three&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Invalid JSX:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Paragraph One&lt;/p&gt;</span><br><span class="line">&lt;p&gt;Paragraph Two&lt;/p&gt;</span><br><span class="line">&lt;p&gt;Paragraph Three&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用括号"><a href="#使用括号" class="headerlink" title="使用括号"></a>使用括号</h3><p>可以用括号将JSX代码括起来，但这并不是严格必要的。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> JSX = (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;<span class="comment">/* 这是一个注释 */</span>&#125;</span><br><span class="line">    &lt;p&gt;Paragraph One&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p&gt;Paragraph Two&lt;/</span>p&gt;</span><br><span class="line">    &lt;p&gt;Paragraph Three&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>JSX中使用<code>{/* comments */}</code>的语法来添加注释。</p>
 
       
     </div>
@@ -461,9 +459,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/d3js/" rel="tag"># d3js</a>
-          
-            <a href="/tags/map/" rel="tag"># map</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -476,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/07/using-topojson-to-optimize-the-map/" rel="next" title="使用d3.js实现地图（二） - 基于TopoJSON优化">
-                <i class="fa fa-chevron-left"></i> 使用d3.js实现地图（二） - 基于TopoJSON优化
+              <a href="/2019/04/10/add-mark-to-map/" rel="next" title="使用d3.js实现地图（三） - 添加坐标点和文字标记">
+                <i class="fa fa-chevron-left"></i> 使用d3.js实现地图（三） - 添加坐标点和文字标记
               </a>
             
           </div>
@@ -485,10 +481,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/12/react-learning-01/" rel="prev" title="React学习（1）—— JSX">
-                React学习（1）—— JSX <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据说明"><span class="nav-number">1.</span> <span class="nav-text">数据说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标转换的实现"><span class="nav-number">2.</span> <span class="nav-text">坐标转换的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标注绘制"><span class="nav-number">3.</span> <span class="nav-text">标注绘制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关链接"><span class="nav-number">5.</span> <span class="nav-text">相关链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React介绍"><span class="nav-number">2.</span> <span class="nav-text">React介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-number">3.</span> <span class="nav-text">JSX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译"><span class="nav-number">3.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单个根元素"><span class="nav-number">3.2.</span> <span class="nav-text">单个根元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用括号"><span class="nav-number">3.3.</span> <span class="nav-text">使用括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">3.4.</span> <span class="nav-text">注释</span></a></li></ol></li></ol></div>
             
 
           </div>
