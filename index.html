@@ -317,6 +317,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wufeihuang.github.io/2019/04/16/react-vs-react-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wufeihuang">
+      <meta itemprop="description" content="吴飞黄的个人博客">
+      <meta itemprop="image" content="/images/nazi.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wufeihuang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/16/react-vs-react-01/" class="post-title-link" itemprop="url">初学React，与Vue做个初步对比</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-16 01:01:34 / 修改时间：03:11:35" itemprop="dateCreated datePublished" datetime="2019-04-16T01:01:34+08:00">2019-04-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="写这篇文章有什么背景？"><a href="#写这篇文章有什么背景？" class="headerlink" title="写这篇文章有什么背景？"></a>写这篇文章有什么背景？</h2><p>近期开始学习React，目前过了一遍中文官方文档<a href="https://react.docschina.org/docs/hello-world.html" target="_blank" rel="noopener">主要概念</a>部分，以及学完一遍FreeCodeCamp的<a href="https://learn.freecodecamp.org/front-end-libraries/react" target="_blank" rel="noopener">React入门教程</a>。这两份入门资料都非常不错，后者可以一边讲解一边让你实践，官方文档则相对更详细一些，而且能更清楚地讲清相关概念以及介绍一些React的编程思想。</p>
+<p>我之前有Vue的基础，虽然知道Vue和React有一些异同，但是对React没有实际接触，所以并不清楚二者具体有哪些区别。然后在最近学习期间，我能清晰地感觉到二者有着显著的不同，在这里通过输出成文字的方式大致梳理一下。</p>
+<h2 id="相同点：Vue和React的相同（相似）之处有哪些？"><a href="#相同点：Vue和React的相同（相似）之处有哪些？" class="headerlink" title="相同点：Vue和React的相同（相似）之处有哪些？"></a>相同点：Vue和React的相同（相似）之处有哪些？</h2><ul>
+<li>MVC/MVVM框架</li>
+<li>用于构建SPA</li>
+<li>组件化思想</li>
+<li>使用虚拟DOM</li>
+<li>相似的生命周期</li>
+<li>都在原生HTML语法基础上扩展了自己的模板语法</li>
+<li>都有配套的路由库（vue-router/react-router）</li>
+<li>都有配套的状态管理库（vuex/redux\mobx）</li>
+<li>其他类似的生态</li>
+<li>都有脚手架工具（@vue/cli，create-react-app）</li>
+<li>都是通过<code>props</code>的方式实现父组件向子组件传递数据，并且子组件不允许修改<code>props</code></li>
+</ul>
+<h3 id="不同点：Vue和React有什么不同之处？"><a href="#不同点：Vue和React有什么不同之处？" class="headerlink" title="不同点：Vue和React有什么不同之处？"></a>不同点：Vue和React有什么不同之处？</h3><ul>
+<li><em>编程风格不同</em>：React基本上是以JS风格来编程，即使样式上也更青睐内联样式；Vue则更主张内容、样式、行为分离的风格</li>
+<li><em>上手难度不同</em>：Vue上手更容易；React相对复杂些</li>
+<li><em>生态规模差异</em>：React是Facebook推出的，大厂维护和更新，生态更好更丰富；Vue是尤雨溪个人推出的，生态也不错，但还不如React，不过当前Github stars数更多</li>
+<li><em>模板语法不同</em>：React模板语法是JSX语法；而Vue的模板语法则是内置各种指令扩展HTML语法</li>
+<li><em>生命周期差异</em>：二者生命周期相似却有区别</li>
+<li><em>组件创建方式不同</em>：React通过函数或者class语法创建组件；Vue则是通过其他方式（new一个Vue实例、Vue.component注册、Vue.extend或者创建.vue单文件）来创建组件</li>
+<li><em>组件命名和使用规则差异</em>：React要求组件首字母必须大写（<code>CamelCase</code>）；Vue则同时支持<code>CamelCase</code>和<code>kebab-case</code>写法</li>
+<li><em>应用样式时的差异</em>：React青睐内联样式，并且在JSX语法中多字母样式必须使用<code>camelCase</code>格式；Vue也支持内联样式，但是更青睐样式分离，在单文件组件中提供了独立的<code>style</code>部分，并可以通过标记<code>scoped</code>限制组件CSS的作用范围（当然，二者都同时支持外部文件方式引用CSS）</li>
+<li><em>单向数据流与双向数据绑定</em>：实际上二者都是单向数据流，但是React是完全的单向数据流，并没有实现双向绑定；而Vue则实现了双向数据绑定</li>
+<li><em>父子组件数据传递方式的不同</em>：父组件向子组件传递数据时，二者都是通过<code>props</code>的方式。而子组件向父组件传递数据，React是通过将父组件的方法（通常是会调用<code>setState()</code>方法的组件方法）作为<code>props</code>传递给子组件然后在子组件调用的方式实现；而Vue则是使用自定义事件的方式</li>
+<li><em>模板中绑定组件上的数据或方法时的this差异</em>：在React的JSX中都需要手动通过<code>this</code>来访问到组件内对应的数据或方法；而Vue的模板中则可以省略<code>this</code>，这应该是Vue在编译时自动会将这些数据属性和方法作为实例对象的属性和方法调用</li>
+<li><em>进行事件绑定时this指向的处理不同</em>：如果要在模板中向组件的DOM元素绑定事件，React通常需要手动将事件回调函数的<code>this</code>指向绑定为组件实例自身；而Vue则不需要额外处理<code>this</code>指向，可以直接将事件回调设为组件的<code>methods</code>中的方法</li>
+<li><em>组件的组合与继承的差异</em>：在复用组件构建新组件时，二者都更支持使用组合的方式。React基本上就是建议使用组合方式；React没有明面上的这种概念上的说法，但使用时基本也是组合的方式，但同时也支持继承（Vue.extend）的方式</li>
+<li><em>组件中插入内容的方式不同</em>：React中使用<code>props.children</code>的方式向子组件插入内容；Vue则使用<code>slot</code>的方式</li>
+<li><em>组件自身数据（状态）的更新的差异</em>：React组件中的数据通过<code>this.state</code>维护，并且不能直接修改，只能通过<code>this.setState()</code>方法来修改状态并重新渲染DOM；Vue组件则将自身数据保存在<code>data</code>对象中，可以直接修改并自动触发DOM的重新渲染（因为双向绑定）</li>
+<li><em>typescript支持上的差异</em>：React对typescript支持得更好；Vue则目前对typescript支持性略差，不过等v3出来后应该会好很多</li>
+<li><em>原生方案上的差异</em>：React有较为成熟的<code>React Native</code>方案；Vue的话是weex，但是不如RN应用广泛，应该是存在某些缺点，另外小程序语法接近Vue语法，并有相关的基于Vue的小程序方案</li>
+<li><em>官方文档上的差异</em>：React文档讲使用更讲思路和理念；Vue文档主要讲使用</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>就我目前看来，React虽然比Vue使用时稍微复杂点，但是编写React程序更容易形成清晰的编程思路，更容易理解组件之间的逻辑关系、数据流向等；而Vue虽然上手简单，但是反而没那么容易理解项目的运作原理等。（大概这么个意思）</p>
+<p>二者各有优缺点，我现在的感觉是最好两者都学（先对其中一个有基础，再学另外一个），这样能拓宽思路，并且相互对比印证更有利于学会学懂。</p>
+<p>ps：由于我目前对React的接触还不深，所以暂时理出这些。这篇文章暂时只是我自己做一个简单的对比并输出，还未经梳理和修改，之后应该会进行修改使得表述更清晰准确、表达上语言和逻辑上更通顺等。&lt;待优化&gt;</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wufeihuang.github.io/2019/04/12/react-learning-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -379,7 +577,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-13 02:17:33" itemprop="dateModified" datetime="2019-04-13T02:17:33+08:00">2019-04-13</time>
+                <time title="修改时间：2019-04-15 15:36:41" itemprop="dateModified" datetime="2019-04-15T15:36:41+08:00">2019-04-15</time>
               
             
           </span>
@@ -1222,7 +1420,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1266,7 +1464,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1290,6 +1490,17 @@
                     
                   
                   <a href="https://github.com/wufeihuang" title="GitHub &rarr; https://github.com/wufeihuang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/wufeihuang@foxmail.com" title="E-Mail &rarr; wufeihuang@foxmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
             </div>
