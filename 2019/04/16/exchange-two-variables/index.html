@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这几介绍几种交换两个变量的值的方法。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。以下是题目条件：12var a = 1var b = 1 方案1：使用临时变量1234var c = bb = aa = cc = null 特点：适用于所有类型数据，但是需要一个额外的临时变量 方案2：ES6结构赋值方案1[a, b] = [b, a] 特点：简洁清晰，适用">
+  <meta name="description" content="这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。12var a = 1var b = 2">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="交换两个变量的值">
 <meta property="og:url" content="https://wufeihuang.github.io/2019/04/16/exchange-two-variables/index.html">
 <meta property="og:site_name" content="Wufeihuang&#39;s Blog">
-<meta property="og:description" content="这几介绍几种交换两个变量的值的方法。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。以下是题目条件：12var a = 1var b = 1 方案1：使用临时变量1234var c = bb = aa = cc = null 特点：适用于所有类型数据，但是需要一个额外的临时变量 方案2：ES6结构赋值方案1[a, b] = [b, a] 特点：简洁清晰，适用">
+<meta property="og:description" content="这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。12var a = 1var b = 2">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T15:58:09.112Z">
+<meta property="og:updated_time" content="2019-04-16T16:13:10.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="交换两个变量的值">
-<meta name="twitter:description" content="这几介绍几种交换两个变量的值的方法。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。以下是题目条件：12var a = 1var b = 1 方案1：使用临时变量1234var c = bb = aa = cc = null 特点：适用于所有类型数据，但是需要一个额外的临时变量 方案2：ES6结构赋值方案1[a, b] = [b, a] 特点：简洁清晰，适用">
+<meta name="twitter:description" content="这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。12var a = 1var b = 2">
 
 
 
@@ -361,12 +361,24 @@
                 
               
 
-              <time title="创建时间：2019-04-16 22:59:58 / 修改时间：23:58:09" itemprop="dateCreated datePublished" datetime="2019-04-16T22:59:58+08:00">2019-04-16</time>
+              <time title="创建时间：2019-04-16 22:59:58" itemprop="dateCreated datePublished" datetime="2019-04-16T22:59:58+08:00">2019-04-16</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-17 00:13:10" itemprop="dateModified" datetime="2019-04-17T00:13:10+08:00">2019-04-17</time>
               
             
           </span>
@@ -418,18 +430,19 @@
       
 
       
-        <p>这几介绍几种交换两个变量的值的方法。</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定两个变量<code>a</code>和<code>b</code>，要交换这两个变量的值，即交换后<code>a</code>等于原来的<code>b</code>，<code>b</code>等于原来的<code>a</code>。以下是题目条件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+        <p>这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定两个变量<code>a</code>和<code>b</code>，要交换这两个变量的值，即交换后<code>a</code>等于原来的<code>b</code>，<code>b</code>等于原来的<code>a</code>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="方案1：使用临时变量"><a href="#方案1：使用临时变量" class="headerlink" title="方案1：使用临时变量"></a>方案1：使用临时变量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = b</span><br><span class="line">b = a</span><br><span class="line">a = c</span><br><span class="line">c = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
-<p>特点：适用于所有类型数据，但是需要一个额外的临时变量</p>
-<h2 id="方案2：ES6结构赋值方案"><a href="#方案2：ES6结构赋值方案" class="headerlink" title="方案2：ES6结构赋值方案"></a>方案2：ES6结构赋值方案</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a]</span><br></pre></td></tr></table></figure>
-<p>特点：简洁清晰，适用于所有类型数据，且不需要额外临时变量，但是需要运行环境支持ES6（刨除编程语言的限制，则需要使用的语言也支持这种写法）</p>
-<h2 id="方案3：数学计算方案（要求a、b是数值型）"><a href="#方案3：数学计算方案（要求a、b是数值型）" class="headerlink" title="方案3：数学计算方案（要求a、b是数值型）"></a>方案3：数学计算方案（要求a、b是数值型）</h2><p>第一步使用加法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a + b</span><br><span class="line">b = a - b</span><br><span class="line">a = a - b</span><br></pre></td></tr></table></figure></p>
-<p>第一步使用减法也很相似：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a - b</span><br><span class="line">b = a + b</span><br><span class="line">a = b - a</span><br></pre></td></tr></table></figure></p>
+<p>特点：适用于所有类型数据，但是需要一个额外的临时变量。</p>
+<h2 id="方案2：使用ES6解构赋值"><a href="#方案2：使用ES6解构赋值" class="headerlink" title="方案2：使用ES6解构赋值"></a>方案2：使用ES6解构赋值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a]</span><br></pre></td></tr></table></figure>
+<p>特点：简洁清晰，适用于所有类型数据，且不需要额外临时变量，但是需要运行环境支持ES6（刨除编程语言的限制，则需要使用的语言也支持这种写法）。</p>
+<h2 id="方案3：利用数学计算（要求a、b是数值型）"><a href="#方案3：利用数学计算（要求a、b是数值型）" class="headerlink" title="方案3：利用数学计算（要求a、b是数值型）"></a>方案3：利用数学计算（要求a、b是数值型）</h2><p>第一步使用加法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a + b</span><br><span class="line">b = a - b</span><br><span class="line">a = a - b</span><br></pre></td></tr></table></figure></p>
+<p>第一步使用减法也差不多：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a - b</span><br><span class="line">b = a + b</span><br><span class="line">a = b - a</span><br></pre></td></tr></table></figure></p>
 <p>由于0的特殊性，所以不适合使用乘除法。</p>
 <h2 id="方案4：使用按位异或操作符（-）（要求a、b是数值型）"><a href="#方案4：使用按位异或操作符（-）（要求a、b是数值型）" class="headerlink" title="方案4：使用按位异或操作符（^）（要求a、b是数值型）"></a>方案4：使用按位异或操作符（^）（要求a、b是数值型）</h2><p>按位异或操作符（^）适用于数值之间使用，它的原理是将参与运算的两个数值转换成等长的二进制数字，然后按位进行异或判断，当二者相同时返回0，二者不同时返回1（即 1^1 == 0^0 == 0, 1^0 == 0^1 == 1），之后将所有位的返回值拼成二进制结果，最后再将这个二进制结果转换回十进制。</p>
 <p>这个方案的原理其实和方案三一样的，只不过利用的是按位异或运算的一个特点：两个数进行按位异或运算后得到的结果，这个结果再和原先参与运算的其中一个值进行按位异或运算，会得到原先参与运算的另一个值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a^b</span><br><span class="line">b = a^b</span><br><span class="line">a = a^b</span><br></pre></td></tr></table></figure></p>
-<h2 id="方案5：针对字符串"><a href="#方案5：针对字符串" class="headerlink" title="方案5：针对字符串"></a>方案5：针对字符串</h2><p>这个方案和方案三基本是一样的，只不过是适用于字符类型的变量之间的交换。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'a'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'b'</span></span><br><span class="line"></span><br><span class="line">a = a + b <span class="comment">// a = a.concat(b)</span></span><br><span class="line">b = a.substr(<span class="number">0</span>, a.length - b.length)</span><br><span class="line">a = a.substr(b.length)</span><br></pre></td></tr></table></figure></p>
+<h2 id="方案5：针对两个字符串"><a href="#方案5：针对两个字符串" class="headerlink" title="方案5：针对两个字符串"></a>方案5：针对两个字符串</h2><p>这个方案和方案三基本是一样的，只不过是适用于字符类型的变量之间的交换。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'a'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'b'</span></span><br><span class="line"></span><br><span class="line">a = a + b <span class="comment">// a = a.concat(b)</span></span><br><span class="line">b = a.substr(<span class="number">0</span>, a.length - b.length)</span><br><span class="line">a = a.substr(b.length)</span><br></pre></td></tr></table></figure></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>很显然，方案1和方案2是支持各类型数据的通用方案，适合实际应用；之后的方案3、4、5原理很相似，但都只支持特定的数据类型，基本上只是作为思路的拓展。</p>
 
       
@@ -660,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案1：使用临时变量"><span class="nav-number">2.</span> <span class="nav-text">方案1：使用临时变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案2：ES6结构赋值方案"><span class="nav-number">3.</span> <span class="nav-text">方案2：ES6结构赋值方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案3：数学计算方案（要求a、b是数值型）"><span class="nav-number">4.</span> <span class="nav-text">方案3：数学计算方案（要求a、b是数值型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案4：使用按位异或操作符（-）（要求a、b是数值型）"><span class="nav-number">5.</span> <span class="nav-text">方案4：使用按位异或操作符（^）（要求a、b是数值型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案5：针对字符串"><span class="nav-number">6.</span> <span class="nav-text">方案5：针对字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案1：使用临时变量"><span class="nav-number">2.</span> <span class="nav-text">方案1：使用临时变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案2：使用ES6解构赋值"><span class="nav-number">3.</span> <span class="nav-text">方案2：使用ES6解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案3：利用数学计算（要求a、b是数值型）"><span class="nav-number">4.</span> <span class="nav-text">方案3：利用数学计算（要求a、b是数值型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案4：使用按位异或操作符（-）（要求a、b是数值型）"><span class="nav-number">5.</span> <span class="nav-text">方案4：使用按位异或操作符（^）（要求a、b是数值型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案5：针对两个字符串"><span class="nav-number">6.</span> <span class="nav-text">方案5：针对两个字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
