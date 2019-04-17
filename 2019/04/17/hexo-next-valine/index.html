@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。12var a = 1var b = 2">
-<meta name="keywords" content="算法">
+  <meta name="description" content="虽然现在还没有读者，不过既然开了Hexo博客，就得尝试下开启评论功能。简单搜索了一下，确定了Valine。 Valine首先Valine是一套国产的评论系统，所以不存在翻墙问题。它是基于LeanCloud（我也没去了解）的。主要特点是支持Markdown语法，无后端实现（也就是不需要登录），并且支持文章阅读量统计，另外比较简洁美观，这几点是我选择它的主要原因。另外根据Valine官网介绍，它还具备">
+<meta name="keywords" content="hexo,next,valine">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5种交换两个变量的值的方案">
-<meta property="og:url" content="https://wufeihuang.github.io/2019/04/16/exchange-two-variables/index.html">
+<meta property="og:title" content="在Hexo的next主题下使用Valine评论系统">
+<meta property="og:url" content="https://wufeihuang.github.io/2019/04/17/hexo-next-valine/index.html">
 <meta property="og:site_name" content="Wufeihuang&#39;s Blog">
-<meta property="og:description" content="这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。12var a = 1var b = 2">
+<meta property="og:description" content="虽然现在还没有读者，不过既然开了Hexo博客，就得尝试下开启评论功能。简单搜索了一下，确定了Valine。 Valine首先Valine是一套国产的评论系统，所以不存在翻墙问题。它是基于LeanCloud（我也没去了解）的。主要特点是支持Markdown语法，无后端实现（也就是不需要登录），并且支持文章阅读量统计，另外比较简洁美观，这几点是我选择它的主要原因。另外根据Valine官网介绍，它还具备">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T16:14:11.682Z">
+<meta property="og:updated_time" content="2019-04-17T16:29:24.579Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5种交换两个变量的值的方案">
-<meta name="twitter:description" content="这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。 题目给定两个变量a和b，要交换这两个变量的值，即交换后a等于原来的b，b等于原来的a。12var a = 1var b = 2">
+<meta name="twitter:title" content="在Hexo的next主题下使用Valine评论系统">
+<meta name="twitter:description" content="虽然现在还没有读者，不过既然开了Hexo博客，就得尝试下开启评论功能。简单搜索了一下，确定了Valine。 Valine首先Valine是一套国产的评论系统，所以不存在翻墙问题。它是基于LeanCloud（我也没去了解）的。主要特点是支持Markdown语法，无后端实现（也就是不需要登录），并且支持文章阅读量统计，另外比较简洁美观，这几点是我选择它的主要原因。另外根据Valine官网介绍，它还具备">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://wufeihuang.github.io/2019/04/16/exchange-two-variables/">
+  <link rel="canonical" href="https://wufeihuang.github.io/2019/04/17/hexo-next-valine/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>5种交换两个变量的值的方案 | Wufeihuang's Blog</title>
+  <title>在Hexo的next主题下使用Valine评论系统 | Wufeihuang's Blog</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wufeihuang.github.io/2019/04/16/exchange-two-variables/">
+    <link itemprop="mainEntityOfPage" href="https://wufeihuang.github.io/2019/04/17/hexo-next-valine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wufeihuang">
@@ -335,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">5种交换两个变量的值的方案
+          <h2 class="post-title" itemprop="name headline">在Hexo的next主题下使用Valine评论系统
 
               
             
@@ -361,7 +361,7 @@
                 
               
 
-              <time title="创建时间：2019-04-16 22:59:58" itemprop="dateCreated datePublished" datetime="2019-04-16T22:59:58+08:00">2019-04-16</time>
+              <time title="创建时间：2019-04-17 23:28:38" itemprop="dateCreated datePublished" datetime="2019-04-17T23:28:38+08:00">2019-04-17</time>
             
 
             
@@ -378,29 +378,11 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-17 00:14:11" itemprop="dateModified" datetime="2019-04-17T00:14:11+08:00">2019-04-17</time>
+                <time title="修改时间：2019-04-18 00:29:24" itemprop="dateModified" datetime="2019-04-18T00:29:24+08:00">2019-04-18</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -414,8 +396,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/16/exchange-two-variables/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/16/exchange-two-variables/" itemprop="commentCount"></span>
+                <a href="/2019/04/17/hexo-next-valine/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/hexo-next-valine/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,7 +405,7 @@
 
           
           
-            <span id="/2019/04/16/exchange-two-variables/" class="leancloud_visitors" data-flag-title="5种交换两个变量的值的方案">
+            <span id="/2019/04/17/hexo-next-valine/" class="leancloud_visitors" data-flag-title="在Hexo的next主题下使用Valine评论系统">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -454,20 +436,32 @@
       
 
       
-        <p>这里介绍5种交换两个变量的值的方案，其中2种通用方案，3种针对特定类型的方案。</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定两个变量<code>a</code>和<code>b</code>，要交换这两个变量的值，即交换后<code>a</code>等于原来的<code>b</code>，<code>b</code>等于原来的<code>a</code>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2 id="方案1：使用临时变量"><a href="#方案1：使用临时变量" class="headerlink" title="方案1：使用临时变量"></a>方案1：使用临时变量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = b</span><br><span class="line">b = a</span><br><span class="line">a = c</span><br><span class="line">c = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
-<p>特点：适用于所有类型数据，但是需要一个额外的临时变量。</p>
-<h2 id="方案2：使用ES6解构赋值"><a href="#方案2：使用ES6解构赋值" class="headerlink" title="方案2：使用ES6解构赋值"></a>方案2：使用ES6解构赋值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a]</span><br></pre></td></tr></table></figure>
-<p>特点：简洁清晰，适用于所有类型数据，且不需要额外临时变量，但是需要运行环境支持ES6（刨除编程语言的限制，则需要使用的语言也支持这种写法）。</p>
-<h2 id="方案3：利用数学计算（要求a、b是数值型）"><a href="#方案3：利用数学计算（要求a、b是数值型）" class="headerlink" title="方案3：利用数学计算（要求a、b是数值型）"></a>方案3：利用数学计算（要求a、b是数值型）</h2><p>第一步使用加法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a + b</span><br><span class="line">b = a - b</span><br><span class="line">a = a - b</span><br></pre></td></tr></table></figure></p>
-<p>第一步使用减法也差不多：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a - b</span><br><span class="line">b = a + b</span><br><span class="line">a = b - a</span><br></pre></td></tr></table></figure></p>
-<p>由于0的特殊性，所以不适合使用乘除法。</p>
-<h2 id="方案4：使用按位异或操作符（-）（要求a、b是数值型）"><a href="#方案4：使用按位异或操作符（-）（要求a、b是数值型）" class="headerlink" title="方案4：使用按位异或操作符（^）（要求a、b是数值型）"></a>方案4：使用按位异或操作符（^）（要求a、b是数值型）</h2><p>按位异或操作符（^）适用于数值之间使用，它的原理是将参与运算的两个数值转换成等长的二进制数字，然后按位进行异或判断，当二者相同时返回0，二者不同时返回1（即 1^1 == 0^0 == 0, 1^0 == 0^1 == 1），之后将所有位的返回值拼成二进制结果，最后再将这个二进制结果转换回十进制。</p>
-<p>这个方案的原理其实和方案三一样的，只不过利用的是按位异或运算的一个特点：两个数进行按位异或运算后得到的结果，这个结果再和原先参与运算的其中一个值进行按位异或运算，会得到原先参与运算的另一个值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a^b</span><br><span class="line">b = a^b</span><br><span class="line">a = a^b</span><br></pre></td></tr></table></figure></p>
-<h2 id="方案5：针对两个字符串"><a href="#方案5：针对两个字符串" class="headerlink" title="方案5：针对两个字符串"></a>方案5：针对两个字符串</h2><p>这个方案和方案三基本是一样的，只不过是适用于字符类型的变量之间的交换。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'a'</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'b'</span></span><br><span class="line"></span><br><span class="line">a = a + b <span class="comment">// a = a.concat(b)</span></span><br><span class="line">b = a.substr(<span class="number">0</span>, a.length - b.length)</span><br><span class="line">a = a.substr(b.length)</span><br></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>很显然，方案1和方案2是支持各类型数据的通用方案，适合实际应用；之后的方案3、4、5原理很相似，但都只支持特定的数据类型，基本上只是作为思路的拓展。</p>
+        <p>虽然现在还没有读者，不过既然开了Hexo博客，就得尝试下开启评论功能。简单搜索了一下，确定了<code>Valine</code>。</p>
+<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h2><p>首先Valine是一套国产的评论系统，所以不存在翻墙问题。它是基于<code>LeanCloud</code>（我也没去了解）的。主要特点是支持Markdown语法，无后端实现（也就是不需要登录），并且支持文章阅读量统计，另外比较简洁美观，这几点是我选择它的主要原因。另外根据Valine官网介绍，它还具备快速、安全、轻量并且支持<code>Emoji</code>的特点。</p>
+<p>本博客使用的是<code>next</code>主题，内置支持了Valine评论系统，所以使用起来很方便。</p>
+<h2 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h2><p>毕竟是使用别人的服务，所以这一步需要注册登录<code>LeanCloud</code>。具体操作看<a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">官方文档</a>。</p>
+<p>注册并创建应用后就可以拿到<code>APP ID</code>和<code>APP Key</code>了，然后就可以在next主题内配置使用<code>Valine</code>评论系统了。</p>
+<h2 id="在next主题的-config-yml文件中配置"><a href="#在next主题的-config-yml文件中配置" class="headerlink" title="在next主题的_config.yml文件中配置"></a>在next主题的_config.yml文件中配置</h2><p>在编辑器打开next主题目录下的<code>_config.yml</code>文件，直接<code>Ctrl+F</code>搜索<code>Valine</code>，就可以找到Valine的配置项并进行配置了（ps：next还支持其他评论系统，配置项就在附近）。</p>
+<p>来看一下配置项：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># You can get your appid and appkey from https://leancloud.cn</span></span><br><span class="line"><span class="comment"># More info available at https://valine.js.org</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span> <span class="comment"># true表示开始这个评论功能</span></span><br><span class="line"><span class="attr">  appid:</span>  <span class="comment"># 你的Lean Cloud APP ID</span></span><br><span class="line"><span class="attr">  appkey:</span>  <span class="comment"># 你的Lean Cloud APP Key</span></span><br><span class="line"><span class="attr">  notify:</span> <span class="literal">false</span> <span class="comment"># 是否接收邮件通知</span></span><br><span class="line"><span class="attr">  verify:</span> <span class="literal">false</span> <span class="comment"># 发表评论是否需要验证码</span></span><br><span class="line"><span class="attr">  placeholder:</span> <span class="string">发表你的评论</span> <span class="comment"># 占位文字提示</span></span><br><span class="line"><span class="attr">  avatar:</span> <span class="string">mm</span> <span class="comment"># 基于 gravatar 网站的头像</span></span><br><span class="line"><span class="attr">  guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># 用户可以提供哪些信息</span></span><br><span class="line"><span class="attr">  pageSize:</span> <span class="number">10</span> <span class="comment"># 一页显示数目</span></span><br><span class="line"><span class="attr">  language:</span> <span class="string">zh-cn</span> <span class="comment"># 使用的语言</span></span><br><span class="line"><span class="attr">  visitor:</span> <span class="literal">true</span> <span class="comment"># 文章访问量记录</span></span><br><span class="line"><span class="attr">  comment_count:</span> <span class="literal">true</span> <span class="comment"># 评论数记录</span></span><br></pre></td></tr></table></figure></p>
+<p>最重要的就是要配置<code>enable</code>要设为true，然后要正确配置<code>appid</code>和<code>appkey</code>，用hexo重新发布之后评论系统就可以用了。</p>
+<p>补充说明，<code>visitor</code>表示是否开启记录这篇文章的被浏览次数的功能，<code>comment_count</code>则是开始评论计数功能，这二者会在文章标题下的元信息部分添加<em>评论数</em>和<em>阅读次数</em>两个内容。</p>
+<p>具体效果可以看这篇文章。</p>
+<h2 id="hexo评论的开启和关闭"><a href="#hexo评论的开启和关闭" class="headerlink" title="hexo评论的开启和关闭"></a>hexo评论的开启和关闭</h2><p>首先，整站的评论系统的开启和关闭是在主题的<code>_config.yml</code>文件内配置。</p>
+<p>单篇博客文章的评论功能默认是开启的，要关闭单篇博客的评论功能，则是在博客的<code>Front-matter</code>部分添加<code>comments: false</code>字段。</p>
+<h2 id="Valine的主要缺点"><a href="#Valine的主要缺点" class="headerlink" title="Valine的主要缺点"></a>Valine的主要缺点</h2><p>我暂时觉得Valine的主要缺点在于无法登录。</p>
+<p>不用登录就能评论既是优点又是缺点。优点就不用多说了，不强求用户登录，可匿名，所以想评就评，用户没有成本。</p>
+<p>缺点是除了可以匿名，用户完全还可以输入假的个人信息，如果你想和对方深入沟通，不一定真能找到对方；另外头像配置麻烦；没有登录验证自然也就存在安全隐患（不过Valine自己宣称是安全的，我没研究），至少更容易被灌水、灌垃圾评论等。</p>
+<p>ps：我原本以为这种方案不会记录用户信息，后来发现是有记录用户输入的个人信息的，通过<code>localStorage</code>存储下来了。</p>
+<h2 id="替代方案"><a href="#替代方案" class="headerlink" title="替代方案"></a>替代方案</h2><p>我目前没做仔细研究，所以直接从next主题的<code>_config.yml</code>中提取出它支持的评论系统吧。</p>
+<ul>
+<li>Disqus</li>
+<li>DisqusJS</li>
+<li>Changyan</li>
+<li><strong>Valine</strong></li>
+<li>Gitment</li>
+<li>Gittalk</li>
+</ul>
+<p>其中Gitment和Gittalk都是效果看起来都还不错，Gittalk好看点。关键是它们是基于Github的，用户用的是github账户登录，所以如果要了解评论者信息、和对方深入沟通，这就很方便了。对于技术博客而言，这两者都是不错的选择。</p>
 
       
     </div>
@@ -491,7 +485,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+            <a href="/tags/valine/" rel="tag"># valine</a>
           
         </div>
       
@@ -504,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/16/react-vs-react-01/" rel="next" title="初学React，与Vue做个初步对比">
-                <i class="fa fa-chevron-left"></i> 初学React，与Vue做个初步对比
+              <a href="/2019/04/16/exchange-two-variables/" rel="next" title="5种交换两个变量的值的方案">
+                <i class="fa fa-chevron-left"></i> 5种交换两个变量的值的方案
               </a>
             
           </div>
@@ -513,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/17/hexo-next-valine/" rel="prev" title="在Hexo的next主题下使用Valine评论系统">
-                在Hexo的next主题下使用Valine评论系统 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -711,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案1：使用临时变量"><span class="nav-number">2.</span> <span class="nav-text">方案1：使用临时变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案2：使用ES6解构赋值"><span class="nav-number">3.</span> <span class="nav-text">方案2：使用ES6解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案3：利用数学计算（要求a、b是数值型）"><span class="nav-number">4.</span> <span class="nav-text">方案3：利用数学计算（要求a、b是数值型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案4：使用按位异或操作符（-）（要求a、b是数值型）"><span class="nav-number">5.</span> <span class="nav-text">方案4：使用按位异或操作符（^）（要求a、b是数值型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方案5：针对两个字符串"><span class="nav-number">6.</span> <span class="nav-text">方案5：针对两个字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Valine"><span class="nav-number">1.</span> <span class="nav-text">Valine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取APP-ID-和-APP-Key"><span class="nav-number">2.</span> <span class="nav-text">获取APP ID 和 APP Key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在next主题的-config-yml文件中配置"><span class="nav-number">3.</span> <span class="nav-text">在next主题的_config.yml文件中配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo评论的开启和关闭"><span class="nav-number">4.</span> <span class="nav-text">hexo评论的开启和关闭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Valine的主要缺点"><span class="nav-number">5.</span> <span class="nav-text">Valine的主要缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替代方案"><span class="nav-number">6.</span> <span class="nav-text">替代方案</span></a></li></ol></div>
             
 
           </div>
